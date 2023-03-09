@@ -7,12 +7,12 @@ const removeButton = document.querySelector("#remove-images");
 function searchHandler(evt) {
   evt.preventDefault();
   if (searchForm.value !== "") {
-    getGifPls(searchForm.value);
+    getGif(searchForm.value);
   }
   searchForm.value = "";
 }
 //sends request to giphy API
-async function getGifPls(term) {
+async function getGif(term) {
   const result = await axios.get(
     `https://api.giphy.com/v1/gifs/random?api_key=wBi71TLOWLfKHH88c8jwA7h3TJvQFZ4K&tag=${term}&limit=1`
   );
